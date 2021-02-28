@@ -108,11 +108,8 @@ function checkAnswer (option) {
     final.style.display = "block";
     score.textContent = userScore;
   } 
-  if (startQuiz===0) {
-
-    
-  }
 };
+
 saveUser.addEventListener("click", function(){
   var user = userInitials.value
   var userInfo = JSON.parse(localStorage.getItem("codeUser"))  || []
@@ -123,18 +120,17 @@ saveUser.addEventListener("click", function(){
 localStorage.setItem("codeUser", JSON.stringify(userInfo))
 })
 
+// 
 //document.body.textContent = "Complete";
 //var restartButton = document.createElement("input")
 //restartButton.type="submit";
 //restartButton.value="Again";
 //document.body.appendChild(restartButton);
 //i=0;
-//startQuiz(i);
 //startstop(i);
-//restartButton.addEventListener("click", resetQuiz, true);
-   //function resetQuiz() {
+//restartButton.addEventListener("click", resetStart, true);
+    //function resetStart() {
       //i=0;
-      //startQuiz(0);
       //startStop(0);
       //};
 
@@ -203,8 +199,6 @@ function timer() {
   document.getElementById("sec").innerHTML = secOut;
   document.getElementById("min").innerHTML = minOut;
 }
-
-
 
 function checkTime(i) {
   if (i < 10) {
