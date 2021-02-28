@@ -83,6 +83,7 @@ function renderQuestion(){
 }
 
 startQuiz.addEventListener("click",function(){
+  startStop()
   quiz.style.display = "block";
 renderQuestion()
 });
@@ -102,12 +103,16 @@ function checkAnswer (option) {
     runningQuestion++
     renderQuestion()
   } else{
-    console.log(userScore)
+    console.log(userScore);
     quiz.style.display = "none";
     final.style.display = "block";
     score.textContent = userScore;
+  } 
+  if (startQuiz===0) {
+
+    
   }
-}
+};
 saveUser.addEventListener("click", function(){
   var user = userInitials.value
   var userInfo = JSON.parse(localStorage.getItem("codeUser"))  || []
@@ -116,12 +121,22 @@ saveUser.addEventListener("click", function(){
     score: userScore
   })
 localStorage.setItem("codeUser", JSON.stringify(userInfo))
-
 })
 
-// || or operator
-// && and operator
-// ! not operator
+//document.body.textContent = "Complete";
+//var restartButton = document.createElement("input")
+//restartButton.type="submit";
+//restartButton.value="Again";
+//document.body.appendChild(restartButton);
+//i=0;
+//startQuiz(i);
+//startstop(i);
+//restartButton.addEventListener("click", resetQuiz, true);
+   //function resetQuiz() {
+      //i=0;
+      //startQuiz(0);
+      //startStop(0);
+      //};
 
 
 //STOPWATCH 
