@@ -1,4 +1,93 @@
-.stopwatch{
-    font-size: medium;
-    color:black
+* {box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+p {
+    font-size: 28px;
+    background: black;
+    color:white;
+}
+#question {
+    font-size: 40px;
+}
+#container {
+    height: 15px;
+    position: relative;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#startQuiz button {
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.choices {
+    background: black;
+}
+
+h4 {
+    text-align: center;
+    border-top:solid black;
+    border-bottom: solid black;
+    margin-top: 35px;
+}
+
+#start {
+    background-color: blue;
+    color: white;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+}
+
+#button2 {
+    background-color: blue;
+    color: white;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+}
+
+#quiz {
+    margin-top: 40px;
+}
+
+#final {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#final h3 {
+    margin-top: 60px;
+}
+
+#final button {
+    background-color: blue;
+    color: white;
+    height: 28px;
+    width: 150px;
+}
+
+#userInitials {
+    background: white;
+    color:black;
+    margin-top: 30px;
+    height: 28px;
 }

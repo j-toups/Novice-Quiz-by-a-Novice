@@ -29,35 +29,35 @@ var questionDB = [
 
         question : "What does HTML stand for?",
 
-        choiceA : "Correct",
+        choiceA : "A. Hypertext Markup Language",
 
-        choiceB : "Wrong",
+        choiceB : "B. How To Make Language",
 
-        choiceC : "Wrong",
+        choiceC : "C. Here Terminal Meets Langugage ",
 
         correct : "A"
 
     },{
 
-        question : "What does CSS stand for?",
+        question : "SaaS is a method of ____",
 
-        choiceA : "Wrong",
+        choiceA : "A. Talking back",
 
-        choiceB : "Correct",
+        choiceB : "B. Remotely Delivering Software",
 
-        choiceC : "Wrong",
+        choiceC : "C. Selectively Adding Account Service",
 
         correct : "B"
 
     },{
 
-        question : "What does JS stand for?",
+        question : "What is === operator?",
 
-        choiceA : "Wrong",
+        choiceA : "A. Checks only for equality in value",
 
-        choiceB : "Wrong",
+        choiceB : "B. Checks for equity in numbers",
 
-        choiceC : "Correct",
+        choiceC : "C. Checks for equality in value and type",
 
         correct : "C"
 
@@ -85,7 +85,7 @@ function renderQuestion(){
 startQuiz.addEventListener("click",function(){
   startStop()
   quiz.style.display = "block";
-renderQuestion()
+  renderQuestion()
 });
 
 
@@ -106,7 +106,7 @@ function checkAnswer (option) {
     console.log(userScore);
     quiz.style.display = "none";
     final.style.display = "block";
-    score.textContent = userScore;
+    score.textContent = "Total Correct: " + userScore;
   } 
 };
 
@@ -117,32 +117,18 @@ saveUser.addEventListener("click", function(){
     user: user,
     score: userScore
   })
+  alert("Saved!")
 localStorage.setItem("codeUser", JSON.stringify(userInfo))
 })
 
-// 
-//document.body.textContent = "Complete";
-//var restartButton = document.createElement("input")
-//restartButton.type="submit";
-//restartButton.value="Again";
-//document.body.appendChild(restartButton);
-//i=0;
-//startstop(i);
-//restartButton.addEventListener("click", resetStart, true);
-    //function resetStart() {
-      //i=0;
-      //startStop(0);
-      //};
 
+//STOPWATCH
 
-//STOPWATCH 
 var x;
 var startstop = 0;
 
-function startStop() { /* Toggle StartStop */
-
+function startStop() { 
   startstop = startstop + 1;
-
   if (startstop === 1) {
     start();
     document.getElementById("start").innerHTML = "Stop";
@@ -154,30 +140,21 @@ function startStop() { /* Toggle StartStop */
 
 }
 
-
 function start() {
   x = setInterval(timer, 10);
-} /* Start */
+} 
 
 function stop() {
   clearInterval(x);
-} /* Stop */
+} 
 
-
-var sec = 0; /* holds incrementing value */
+var sec = 0; 
 var min = 0;
-
-
-/* Contains and outputs returned value of  function checkTime */
-
 
 var secOut = 0;
 var minOut = 0;
 
 
-/* Output variable End */
-
-/* Main Timer */
 function timer() {
   
   secOut = checkTime(sec);
@@ -190,12 +167,6 @@ function timer() {
     sec = 0;
   }
 
-  if (min == 60) {
-    min = 0;
-    hour = ++hour;
-
-  }
-
   document.getElementById("sec").innerHTML = secOut;
   document.getElementById("min").innerHTML = minOut;
 }
@@ -204,15 +175,13 @@ function checkTime(i) {
   if (i < 10) {
     i = "0" + i;
   }
-  return i;
+  return i
 }
+
 /*Reset*/
 function reset() {
   sec = 0;
-  min = 0
-  
+  min = 0;
   document.getElementById("sec").innerHTML = "00";
-  document.getElementById("min").innerHTML = "00";
- 
-
+  document.getElementById("min").innerHTML = "00"
 }
